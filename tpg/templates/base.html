@@ -1,0 +1,50 @@
+{% load compress %}{% load static from staticfiles %}<!doctype html>
+<!--[if lt IE 7]>      <html lang="en" class="lt-ie9 lt-ie8 lt-ie7 ie6"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="lt-ie9 lt-ie8 ie7"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="lt-ie9 ie8"> <![endif]-->
+<!--[if IE 9]>         <html lang="en" class="ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block titlewrapper %}{% block title %}{% endblock title %} - Taipan Go{% endblock titlewrapper %}</title>
+  <meta name="description" content="{% block meta_description %}{% endblock meta_description %}">
+  <meta name="keywords" content="{% block meta_keywords %}{% endblock meta_keywords %}">
+  {% block css %}
+  {% compress css %}
+  <link rel="stylesheet" href="{% static 'css/site.css' %}" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" media="screen" charset="utf-8">
+  {% endcompress %}
+  {% endblock css %}
+  {% comment %} TODO
+  favicon.ico and apple-touch-icon.png
+  {% endcomment %}
+</head>
+<body>
+{% block header %}
+
+{% endblock header %}
+
+<div class="main-content">{% block main %}{% endblock main %}</div>
+
+{% block footer %}
+{% endblock footer %}
+
+{% block js %}
+<!--[if lt IE 9]>
+{% compress js %}
+
+{% endcompress %}
+<![endif]-->
+{% compress js %}
+<script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+{% endcompress %}
+{% endblock js %}
+
+{% block ga %}
+{% if not debug %}{# TODO async GA #}{% endif %}
+{% endblock ga %}
+</body>
+</html>

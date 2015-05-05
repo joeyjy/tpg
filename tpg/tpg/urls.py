@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from common.views import SiteIndex
+
 urlpatterns = [
+    url(r'^$', SiteIndex.as_view(), name='home'),
     url(r'^admin/', include(admin.site.urls)),
 ]

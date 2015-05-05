@@ -15,6 +15,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+SITE_ROOT = os.path.dirname(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -27,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -37,6 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'compressor',
+    'common',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -50,12 +52,33 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(SITE_ROOT, 'static_dist')
+STATICFILES_DIRS = (
+    # Store intermediate statics                                                                                       
+    #os.path.join(BASE_DIR, 'static_tmp'),
+    os.path.join(SITE_ROOT, 'static'),                                                                                 
+)
+
+COMPRESS_ROOT = os.path.join(SITE_ROOT, 'static')
+COMPRESS_ENABLED = True
+#COMPRESS_OFFLINE = True
+COMPRESS_OUTPUT_DIR = 'cache'
+COMPRESS_JS_FILTERS = ()
+
 ROOT_URLCONF = 'tpg.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.normpath(os.path.join(SITE_ROOT, 'templates')),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,7 +92,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'tpg.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
