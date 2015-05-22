@@ -15,6 +15,8 @@
   {% compress css %}
   <link rel="stylesheet" href="{% static 'css/site.css' %}" type="text/css" media="screen" charset="utf-8">
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" media="screen" charset="utf-8">
+  {% block more_css %}
+  {% endblock more_css %}
   {% endcompress %}
   {% endblock css %}
   {% comment %} TODO
@@ -23,12 +25,94 @@
 </head>
 <body>
 {% block header %}
-
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4">
+        <a href="/"><img src="" alt="logo" id="site-logo" ></a>
+      </div>
+      <div class="col-xs-2 col-sm-2 col-md-2"></div>
+      <div class="col-xs-6 col-sm-6 col-md-6">
+         <div id="header-right">
+           <div id="header-right-contact">
+             <font>400-619-9999</font>
+             <font><a>Website Feedback</a></font>
+             <font><a>FAQ</a></font>
+           </div>
+           <div id="header-right-account">
+             <a>Sign In</a>
+             <a>Register</a>
+             <a>My Account</a>
+           </div>
+         </div>
+      </div>
+    </div>
+  </div>
+</header>
 {% endblock header %}
 
 <div class="main-content">{% block main %}{% endblock main %}</div>
 
 {% block footer %}
+<footer>
+  <div class="container">
+    <h3>Where do you want to go?</h3>
+    <div class="row">
+      <div class="col-xs-8 col-sm-8 col-md-8">
+        
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4">
+        <img src="{% static 'img/f2.jpg' %}" alt="" id="footer-info-img" class="img-circle" >
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <h4>MUM ABCD</h4>
+        <p>footer wording wording wording</p>
+        <p>footer wording wording wording</p>
+        <p>footer wording wording wording</p>
+        <p>footer wording wording wording</p>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <h4>MUM ABCD</h4>
+        <p>footer wording wording wording</p>
+        <p>footer wording wording wording</p>
+        <p>footer wording wording wording</p>
+        <p>footer wording wording wording</p>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <h4>MUM ABCD</h4>
+        <p>footer wording wording wording</p>
+        <p>footer wording wording wording</p>
+        <p>footer wording wording wording</p>
+        <p>footer wording wording wording</p>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <h4>MUM ABCD</h4>
+        <p>footer wording wording wording</p>
+        <p>footer wording wording wording</p>
+        <p>footer wording wording wording</p>
+        <p>footer wording wording wording</p>
+      </div>
+    </div>
+  </div>
+  <div id="footer-company-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-9 col-sm-9 col-md-9">
+          <font>Copyright 2015-2016 Taipan Go.</font>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div id="social-media-icons">
+            <a><img src="{% static 'img/fb.png' %}" alt="Facebook" ></a>
+            <a><img src="{% static 'img/tw.png' %}" alt="Twitter" ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 {% endblock footer %}
 
 {% block js %}
@@ -41,6 +125,8 @@
 <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 {% endcompress %}
+{% block more_js %}
+{% endblock more_js %}
 {% endblock js %}
 
 {% block ga %}

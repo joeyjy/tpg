@@ -1,3 +1,181 @@
 {% extends "base.html" %}
+{% load static from staticfiles %}
+
 
 {% block titlewrapper %}Taipan Go{% endblock titlewrapper %}
+{% block more_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css" media="screen" charset="utf-8">
+{% endblock more_css %}
+
+{% block main %}
+<div id="carousel-captions" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-captions" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-captions" data-slide-to="1"></li>
+    <li data-target="#carousel-captions" data-slide-to="2"></li>
+    <li data-target="#carousel-captions" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="{% static 'img/s1.jpg' %}" alt="...">
+      <div class="carousel-caption">
+        
+      </div>
+    </div>
+    <div class="item">
+      <img src="{% static 'img/s2.jpg' %}" alt="...">
+      <div class="carousel-caption">
+        
+      </div>
+    </div>
+    <div class="item">
+      <img src="{% static 'img/s3.jpg' %}" alt="...">
+      <div class="carousel-caption">
+        
+      </div>
+    </div>
+    <div class="item">
+      <img src="{% static 'img/s4.jpg' %}" alt="...">
+      <div class="carousel-caption">
+        
+      </div>
+    </div>
+  </div>
+</div>
+<div id="main-search">
+  <div class="container">
+    <form action="">
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <p>From</p>
+        <input type="text" >
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <p>To</p>
+        <input type="text" >
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <p>Depart</p>
+        <input type="text" >
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <p>Return</p>
+        <input type="text" >
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4">
+        <p>Adult</p>
+        <select></select>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4">
+        <p>Children(2-12)</p>
+        <select></select>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4">
+        <p>Travel</p>
+        <select></select>
+      </div>
+    </div>
+    <p class="set-center">
+      <button id="main-search-submit" class="btn btn-info" type="submit">Find the Tpecial Deal</button>
+    </p>
+    </form>
+  </div>
+</div>
+<div class="container home-special">
+  <h3>Holiday Last Minute Special Offers</h3>
+  <div class="row">
+    <div class="col-xs-3 col-sm-3 col-md-3">
+      <div class="special-offer-item">
+        <a><img alt="Special Offer" src=""></a>
+        <div class="special-offer-info">
+          <h4>Special Offer</h4>
+          <p>This is some description description balabala...</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+      <div class="special-offer-item">
+        <a><img alt="Special Offer" src=""></a>
+        <div class="special-offer-info">
+          <h4>Special Offer</h4>
+          <p>This is some description description balabala...</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+      <div class="special-offer-item">
+        <a><img alt="Special Offer" src=""></a>
+        <div class="special-offer-info">
+          <h4>Special Offer</h4>
+          <p>This is some description description balabala...</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+      <div class="special-offer-item">
+        <a><img alt="Special Offer" src=""></a>
+        <div class="special-offer-info">
+          <h4>Special Offer</h4>
+          <p>This is some description description balabala...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container home-special">
+  <h3>Popular Holiday Destinations</h3>
+  <div class="row">
+    <div class="col-xs-3 col-sm-3 col-md-3">
+      <div class="special-offer-item">
+        <a><img alt="Special Offer" src=""></a>
+        <div class="special-offer-info">
+          <h4>Special Offer</h4>
+          <p>This is some description description balabala...</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="special-offer-item">
+        <a><img alt="Special Offer" src=""></a>
+        <div class="special-offer-info">
+          <h4>Special Offer</h4>
+          <p>This is some description description balabala...</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+      <div class="sub-item">
+        <a><img alt="Special Offer" src=""></a>
+        <div class="special-offer-info">
+          <h4>Special Offer</h4>
+          <p>This is some description description balabala...</p>
+        </div>
+      </div>
+      <div class="sub-item">
+        <a><img alt="Special Offer" src=""></a>
+        <div class="special-offer-info">
+          <h4>Special Offer</h4>
+          <p>This is some description description balabala...</p>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+<div class="container">
+  <div class="home-subscribe"></div>
+</div>
+{% endblock main %}
+{% block more_js %}
+<script type="text/javascript">
+$(".special-offer-item, .sub-item").hover(function(){
+	$(this).children(".special-offer-info").show();
+	},function(){
+	$(this).children(".special-offer-info").hide();
+});
+</script>
+{% endblock more_js %}
