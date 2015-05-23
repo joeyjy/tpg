@@ -29,7 +29,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-4 col-sm-4 col-md-4">
-        <a href="/"><img src="" alt="logo" id="site-logo" ></a>
+        <a href="{% url 'home' %}"><img src="" alt="logo" id="site-logo" ></a>
       </div>
       <div class="col-xs-2 col-sm-2 col-md-2"></div>
       <div class="col-xs-6 col-sm-6 col-md-6">
@@ -40,8 +40,8 @@
              <font><a>FAQ</a></font>
            </div>
            <div id="header-right-account">
-             <a>Sign In</a>
-             <a>Register</a>
+             <a href="{% url 'account_login' %}">Sign In</a>
+             <a href="{% url 'account_signup' %}">Register</a>
              <a>My Account</a>
            </div>
          </div>

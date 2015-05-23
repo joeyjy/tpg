@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% load url from future %}
+{% load i18n %}
+
+{% block titlewrapper %}Sign UP | Taipan Go{% endblock titlewrapper %}
+{% block more_css %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}" type="text/css" media="screen" charset="utf-8">
+{% endblock more_css %}
+
+{% block main %}
+<div class="container">
+  <form id="signup_form" method="post" action="{% url "account_signup" %}" autocapitalize="off" {% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+    <legend>{% trans "Register" %}</legend>
+    <div class="row">
+      {% csrf_token %}
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <h4>Email</h4>
+        {{ form.email }}
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <h4>Username</h4>
+        {{ form.username }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <h4>Password</h4>
+        {{ form.password }}
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <h4>Confirm Password</h4>
+        {{ form.password_confirm }}
+      </div>
+    </div>
+    {{ form.code }}
+    {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+      <p class="set-center">
+        <button type="submit" id="signup-submit" class="btn btn-primary">{% trans "Sign up" %}</button>
+      </p>
+    </form>
+    <p class="login-signup">
+      <small>
+      {% trans "Already have an account?" %}  <strong><a href="{% url 'account_login' %}">{% trans "Log in" %}</a></strong>
+      </small>
+    </p>
+</div>
+
+{% endblock main %}
+{% block more_js %}
+{% endblock more_js %}

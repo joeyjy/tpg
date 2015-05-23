@@ -1,0 +1,25 @@
+#signup_form{
+	padding: 20px 0;
+}
+#signup_form legend{
+	font-size: 22px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	color: #00C6FF;
+	border-bottom: 1px solid #00C6FF;
+}
+#signup_form .row input{
+	width: 100%;
+	border: 0;
+	padding: 3px;
+	background-color: #e5e5e5;
+}
+#signup_form .row h4{
+	margin: 25px 0 5px 0;
+}
+#signup-submit{
+	margin-top: 50px;
+	padding: 4px 100px;
+	color: #000;
+	font-size: 20px;
+}

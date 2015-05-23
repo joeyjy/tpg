@@ -1,3 +1,4 @@
 Django==1.8.1
 MySQL-python==1.2.5
 django_compressor==1.5
+django-user-accounts

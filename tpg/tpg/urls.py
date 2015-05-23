@@ -21,4 +21,6 @@ from common.views import SiteIndex
 urlpatterns = [
     url(r'^$', SiteIndex.as_view(), name='home'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r"^account/", include("account.urls")),
+    url(r"^package/", include("package.urls")),
 ]
