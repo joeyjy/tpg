@@ -7,7 +7,101 @@
 {% endblock more_css %}
 
 {% block main %}
-
+<div class="container package-top-line">
+  <div class="row">
+    <div class="col-xs-3 col-sm-3 col-md-3">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-default btn-xs" type="button">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-2">
+      <span class="glyphicon glyphicon-white glyphicon-envelope" aria-hidden="true"></span>
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-2">
+      <span class="glyphicon glyphicon-white glyphicon-phone-alt" aria-hidden="true"></span>
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-2">
+      <span class="glyphicon glyphicon-white glyphicon-time" aria-hidden="true"></span>
+      <p id="time-now"></p>
+    </div>
+  </div>
+</div>
+<div class="container package-bigeye">
+  <img src="" alt="">
+</div>
+<div class="container package-list">
+  <p id="breadcrumb">Home >> Asia >> China</p>
+  <h2>Asia: xxxx</h2>
+  <div id="package-left">
+    <div class="row package-box">
+      <div class="col-xs-4 col-sm-4 col-md-4">
+        <img src="" alt="thumbnail" >
+      </div>
+      <div class="col-xs-8 col-sm-8 col-md-8">
+        <h4><a>5 Days 4 Nights Package</a></h4>
+        <p>This question was incorrectly marked as a duplicate (or at least pointed to a question that is not a duplicate). This question refers to bootstrap-3 where the icons are represented by the glyphicons font (not an image asset). The question referred to by the duplicate flag refers to older bootstrap which used images for icons. While it mentions many alternatives it never succinctly</p>
+        <a class="btn btn-success">Independ Travel</a>
+      </div>
+    </div>
+    <div class="row package-box">
+      <div class="col-xs-4 col-sm-4 col-md-4">
+        <img src="" alt="thumbnail" >
+      </div>
+      <div class="col-xs-8 col-sm-8 col-md-8">
+        <h4><a>5 Days 4 Nights Package</a></h4>
+        <p>This question was incorrectly marked as a duplicate (or at least pointed to a question that is not a duplicate). This question refers to bootstrap-3 where the icons are represented by the glyphicons font (not an image asset). The question referred to by the duplicate flag refers to older bootstrap which used images for icons. While it mentions many alternatives it never succinctly</p>
+        <a class="btn btn-success">Independ Travel</a>
+      </div>
+    </div>
+    <div class="row package-box">
+      <div class="col-xs-4 col-sm-4 col-md-4">
+        <img src="" alt="thumbnail" >
+      </div>
+      <div class="col-xs-8 col-sm-8 col-md-8">
+        <h4><a>5 Days 4 Nights Package</a></h4>
+        <p>This question was incorrectly marked as a duplicate (or at least pointed to a question that is not a duplicate). This question refers to bootstrap-3 where the icons are represented by the glyphicons font (not an image asset). The question referred to by the duplicate flag refers to older bootstrap which used images for icons. While it mentions many alternatives it never succinctly</p>
+        <a class="btn btn-success">Independ Travel</a>
+      </div>
+    </div>
+    <div class="row package-box">
+      <div class="col-xs-4 col-sm-4 col-md-4">
+        <img src="" alt="thumbnail" >
+      </div>
+      <div class="col-xs-8 col-sm-8 col-md-8">
+        <h4><a>5 Days 4 Nights Package</a></h4>
+        <p>This question was incorrectly marked as a duplicate (or at least pointed to a question that is not a duplicate). This question refers to bootstrap-3 where the icons are represented by the glyphicons font (not an image asset). The question referred to by the duplicate flag refers to older bootstrap which used images for icons. While it mentions many alternatives it never succinctly</p>
+        <a class="btn btn-success">Independ Travel</a>
+      </div>
+    </div>
+  </div>
+  <div id="package-right">
+    <h3>Asia</h3>
+    <div id="package-area-list">
+      <p>Shanghai</p>
+      <p>Beijing</p>
+      <p>Suzhou</p>
+      <p>Guangzhou</p>
+      <p>Chongqing</p>
+      <p>Tokyo</p>
+      <p>Seoul</p>
+      <p>Bangkok</p>
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
+  </div>
+</div>
 {% endblock main %}
 {% block more_js %}
+<script type="text/javascript">
+var now = (new Date()).toLocaleString();
+$('#time-now').text(now);
+</script>
 {% endblock more_js %}
